@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 void Insertion(int arr[],int n);
 void printArr(int arr[],int n);
 void Insertion(int arr[],int n)
@@ -23,15 +24,16 @@ void printArr(int arr[], int n)
 		printf("%d ",arr[i]);
 	}
 }
-int main(void)
+int main(int argc,char *argv[])
 {
-	int i, n;
+	int i, n,k=0;
 	printf("Enter no. of elements in array: ");
-	scanf("%d",&n);
-	int arr[n];
-	for(i=0;i<n;i++)
+	n=atoi(argv[1]);
+	int arr[argc];
+	for(i=2;i<argc;i++)
 	{
-		scanf("%d",&arr[i]);
+		arr[k]=atoi(argv[i]);
+              	k++;
 	}
 	Insertion(arr,n);
 	printArr(arr,n);
